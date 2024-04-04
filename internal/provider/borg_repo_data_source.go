@@ -85,10 +85,6 @@ func (d *BorgRepoDataSource) Schema(
 				Computed:            true,
 				MarkdownDescription: "Date when the repository was created.",
 			},
-			"current_usage": schema.Float64Attribute{
-				Computed:            true,
-				MarkdownDescription: "Current usage of the repository in megabytes.",
-			},
 			"encryption": schema.StringAttribute{
 				Computed:            true,
 				MarkdownDescription: "Whether the repository is encrypted.",

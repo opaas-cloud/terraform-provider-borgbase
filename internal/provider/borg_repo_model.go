@@ -9,26 +9,25 @@ import (
 )
 
 type BorgRepoModel struct {
-	AlertDays      types.Int64   `tfsdk:"alert_days"`
-	AppendOnly     types.Bool    `tfsdk:"append_only"`
-	AppendOnlyKeys types.List    `tfsdk:"append_only_keys"`
-	BorgVersion    types.String  `tfsdk:"borg_version"`
-	Compaction     types.Object  `tfsdk:"compaction"`
-	CreatedAt      types.String  `tfsdk:"created_at"`
-	CurrentUsage   types.Float64 `tfsdk:"current_usage"`
-	Encryption     types.String  `tfsdk:"encryption"`
-	Format         types.String  `tfsdk:"format"`
-	FullAccessKeys types.List    `tfsdk:"full_access_keys"`
-	Id             types.String  `tfsdk:"id"`
-	LastModified   types.String  `tfsdk:"last_modified"`
-	Name           types.String  `tfsdk:"name"`
-	Quota          types.Int64   `tfsdk:"quota"`
-	QuotaEnabled   types.Bool    `tfsdk:"quota_enabled"`
-	Region         types.String  `tfsdk:"region"`
-	RepoPath       types.String  `tfsdk:"repo_path"`
-	RsyncKeys      types.List    `tfsdk:"rsync_keys"`
-	Server         types.Object  `tfsdk:"server"`
-	SftpEnabled    types.Bool    `tfsdk:"sftp_enabled"`
+	AlertDays      types.Int64  `tfsdk:"alert_days"`
+	AppendOnly     types.Bool   `tfsdk:"append_only"`
+	AppendOnlyKeys types.List   `tfsdk:"append_only_keys"`
+	BorgVersion    types.String `tfsdk:"borg_version"`
+	Compaction     types.Object `tfsdk:"compaction"`
+	CreatedAt      types.String `tfsdk:"created_at"`
+	Encryption     types.String `tfsdk:"encryption"`
+	Format         types.String `tfsdk:"format"`
+	FullAccessKeys types.List   `tfsdk:"full_access_keys"`
+	Id             types.String `tfsdk:"id"`
+	LastModified   types.String `tfsdk:"last_modified"`
+	Name           types.String `tfsdk:"name"`
+	Quota          types.Int64  `tfsdk:"quota"`
+	QuotaEnabled   types.Bool   `tfsdk:"quota_enabled"`
+	Region         types.String `tfsdk:"region"`
+	RepoPath       types.String `tfsdk:"repo_path"`
+	RsyncKeys      types.List   `tfsdk:"rsync_keys"`
+	Server         types.Object `tfsdk:"server"`
+	SftpEnabled    types.Bool   `tfsdk:"sftp_enabled"`
 }
 
 func (m *BorgRepoModel) update(
@@ -65,7 +64,6 @@ func (m *BorgRepoModel) update(
 	}
 
 	m.CreatedAt = types.StringValue(repo.CreatedAt)
-	m.CurrentUsage = types.Float64Value(repo.CurrentUsage)
 	m.Encryption = types.StringValue(repo.Encryption)
 	m.Format = types.StringValue(repo.Format)
 	m.FullAccessKeys, diagnostics = types.ListValueFrom(
@@ -188,7 +186,6 @@ type BorgRepoPayload struct {
 	CompactionHour         int      `json:"compactionHour"`
 	CompactionHourTimezone string   `json:"compactionHourTimezone"`
 	RepoPath               string   `json:"repoPath"`
-	CurrentUsage           float64  `json:"currentUsage"`
 }
 
 type BorgReposPayload []BorgRepoPayload

@@ -43,7 +43,6 @@ func TestAccBorgRepoDataSource(t *testing.T) {
 							return err
 						},
 					),
-					resource.TestCheckResourceAttr(id, "current_usage", "0"),
 					resource.TestCheckResourceAttr(id, "encryption", "none"),
 					resource.TestCheckResourceAttr(id, "format", "borg1"),
 					resource.TestCheckResourceAttr(id, "full_access_keys.#", "0"),

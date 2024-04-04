@@ -12,7 +12,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/boolplanmodifier"
-	"github.com/hashicorp/terraform-plugin-framework/resource/schema/float64planmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/int64planmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/listplanmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/planmodifier"
@@ -137,13 +136,6 @@ func (r *BorgRepoResource) Schema(
 				MarkdownDescription: "Date when the repository was created.",
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.UseStateForUnknown(),
-				},
-			},
-			"current_usage": schema.Float64Attribute{
-				Computed:            true,
-				MarkdownDescription: "Current usage of the repository in megabytes.",
-				PlanModifiers: []planmodifier.Float64{
-					float64planmodifier.UseStateForUnknown(),
 				},
 			},
 			"encryption": schema.StringAttribute{
