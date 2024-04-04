@@ -33,7 +33,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "registry.terraform.io/gjabell/borgbase",
+		Address: "registry.terraform.io/opaas-cloud/borgbase",
 		Debug:   debug,
 	}
 
